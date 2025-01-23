@@ -1,0 +1,193 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #e0e0e0;
+    background-color: #0f0f11;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+header {
+    background-color: #0c0c0d;
+    padding: 20px 0;
+}
+
+.top-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-menu h1 {
+    color: #ffffff;
+    font-size: 1.8em;
+}
+
+.top-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.top-menu ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.top-menu ul li a:hover {
+    color: #6a55ff;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 0;
+    background-color: #0e0e10;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: #a0a0a0;
+}
+
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.button-main, .button-secondary {
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.button-main {
+    background-color: #6a55ff;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.button-main:hover {
+    background-color: #5243cc;
+}
+
+.button-secondary {
+    background-color: #222224;
+    color: #fff;
+}
+
+.button-secondary:hover {
+    background-color: #3a3a3d;
+}
+
+.projects-section, .contact-section, .about-section, .carousel-section {
+    padding: 40px 0;
+    background-color: #0f0f11;
+    text-align: center;
+}
+
+.projects-section h2, .about-section h2, .contact-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+/* Карусель с текстами */
+.carousel-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-texts {
+    display: flex;
+    animation: slideText 20s linear infinite;
+}
+
+.carousel-title {
+    white-space: nowrap;
+    margin-right: 50px;
+    font-size: 2em;
+    color: #ffffff;
+}
+
+@keyframes slideText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Эффекты для проектов */
+.project-card {
+    background-color: #1c1c1f;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative; /* Для корректной работы с абсолютным позиционированием */
+}
+
+/* Эффект увеличения */
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Скрытые изображения по бокам */
+.project-card .side-image-left, .project-card .side-image-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Центрируем по вертикали */
+    opacity: 0;
+    width: 100px; /* Ширина изображения */
+    height: auto;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Для левой картинки */
+.project-card .side-image-left {
+    left: -120px; /* Начальное положение слева */
+}
+
+/* Для правой картинки */
+.project-card .side-image-right {
+    right: -120px; /* Начальное положение справа */
+}
+
+/* Показываем изображения при наведении */
+.project-card:hover .side-image-left,
+.project-card:hover .side-image-right {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0); /* Двигаем изображения в исходное положение */
+}
+
+/* Элементы ссылок в проектах */
+.projects-section .project-card a {
+    color: rgb(106, 85, 255);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.projects-section .project-card a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+}
