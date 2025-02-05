@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>borychka</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключение AOS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <style>
+        .projects-section .project-card a {
+            color: rgb(106, 85, 255);
+            text-decoration: none; /* Убирает подчеркивание */
+            font-weight: bold; /* Для выделения */
+            font-size: 1.5rem; /* Увеличенный размер текста */
+        }
+
+        .projects-section .project-card a:hover {
+            text-decoration: underline; /* Подчеркивание при наведении */
+        }
+
+        /* Эффекты для проектов */
+        .project-card {
+            background-color: #1c1c1f;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Скрытые изображения по бокам */
+        .project-card .side-image-left, .project-card .side-image-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            width: 100px; /* Ширина изображения */
+            height: auto;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .project-card .side-image-left {
+            left: -120px; /* Скрытое состояние слева */
+        }
+
+        .project-card .side-image-right {
+            right: -120px; /* Скрытое состояние справа */
+        }
+
+        /* При наведении на проект */
+        .project-card:hover {
+            transform: scale(1.1); /* Увеличиваем проект */
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Показываем изображения при наведении */
+        .project-card:hover .side-image-left {
+            opacity: 1;
+            transform: translateX(120px); /* Выезжает слева */
+        }
+
+        .project-card:hover .side-image-right {
+            opacity: 1;
+            transform: translateX(-120px); /* Выезжает справа */
+        }
+
+        /* Названия проектов */
+        .projects-section .project-card h3 a {
+            font-size: 1.2em;
+            font-family: 'Arial', sans-serif;
+            color: #6a55ff;
+            text-decoration: none;
+        }
+
+        .projects-section .project-card h3 a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="top-menu">
+                <h1>Borychka</h1>
+                <ul>
+                    <li><a href="#about">Обо мне</a></li>
+                    <li><a href="#projects">Проекты</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Привет! это моя визитка!</h2>
+                <p>Здесь вы можете узнать больше об моей деятельности.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="button-main">Моя деятельность</a>
+                    <a href="#contact" class="button-secondary">Написать мне</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2>То что я делал :3</h2>
+                <div class="project-card" data-aos="fade-up">
+                    <!-- Левая картинка -->
+                    <img src="" class="side-image-left" alt="ClassMate">
+                    <!-- Правая картинка -->
+                    <img src="" class="side-image-right" alt="Exp91">
+                    <h3><a href="https://www.boryagames.ru" target="_blank">Borya Games</a></h3>
+                    <p>Небольшая инди команда разработчиков</p>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Левая картинка -->
+                    <img src="path-to-left-image.jpg" class="side-image-left" alt="End">
+                    <!-- Правая картинка -->
+                    <img src="path-to-right-image.jpg" class="side-image-right" alt="Peace">
+                    <h3><a href="https://music.yandex.ru/artist/23662620?utm_source=desktop&utm_medium=copy_link" target="_blank">Музика</a></h3>
+                    <p>Эмбиент треки для души :3</p>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Левая картинка -->
+                    <img src="path-to-left-image.jpg" class="side-image-left" alt="Пока ничего">
+                    <!-- Правая картинка -->
+                    <img src="path-to-right-image.jpg" class="side-image-right" alt="Абсолютно ничего">
+                    <h3><a href="" target="_blank">OutSpace</a></h3>
+                    <p>Отдельный проект по созданию простых и дешевых плат для спутников</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Карусель с текстами -->
+        <section id="carousel" class="carousel-section">
+            <div class="container">
+                <h2>Память заброшенным проектам</h2>
+                <div class="carousel-wrapper">
+                    <div class="carousel-texts">
+                        <!-- Тексты с названиями проектов -->
+                        <div class="carousel-title">Borya Bank</div>
+                        <div class="carousel-title">Sea Sercher</div>
+                        <div class="carousel-title">The dark forest</div>
+                        <div class="carousel-title">Sand Story</div>
+                        <div class="carousel-title">ParadoX</div>
+                        <div class="carousel-title">Borya Editor</div>
+                        <div class="carousel-title">Mixa AI</div>
+                        <div class="carousel-title">Just Tell</div>
+                        <div class="carousel-title">Just Neyro</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>Обо мне</h2>
+                <p>Я студент и с детства я интересовался програмированием и ходил на обучение так я начал делать свои проектики. Ну а так в игры играю пока ничего не делаю)</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Контакты</h2>
+                <p>Email: <a href="mailto:gyu1242ru@gmail.com">gyu1242ru@gmail.com</a></p>
+                <p>Telegram: <a href="https://t.me/borychka" target="_blank">t.me/borychka</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Borychka. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+        });
+    </script>
+</body>
+</html>
