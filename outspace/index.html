@@ -9,75 +9,46 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <style>
-        .projects-section .project-card a {
-            color: rgb(106, 85, 255);
-            text-decoration: none; /* Убирает подчеркивание */
-            font-weight: bold; /* Для выделения */
-            font-size: 1.5rem; /* Увеличенный размер текста */
+        .logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            vertical-align: middle;
         }
-
-        .projects-section .project-card a:hover {
-            text-decoration: underline; /* Подчеркивание при наведении */
+        .hero img {
+            max-width: 1000px; /* увеличенный размер */
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
         }
-
-        /* Эффекты для проектов */
-        .project-card {
-            background-color: #1c1c1f;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Скрытые изображения по бокам */
-        .project-card .side-image-left, .project-card .side-image-right {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            opacity: 0;
-            width: 100px; /* Ширина изображения */
-            height: auto;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .project-card .side-image-left {
-            left: -120px; /* Скрытое состояние слева */
-        }
-
-        .project-card .side-image-right {
-            right: -120px; /* Скрытое состояние справа */
-        }
-
-        /* При наведении на проект */
-        .project-card:hover {
-            transform: scale(1.1); /* Увеличиваем проект */
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Показываем изображения при наведении */
-        .project-card:hover .side-image-left {
-            opacity: 1;
-            transform: translateX(120px); /* Выезжает слева */
-        }
-
-        .project-card:hover .side-image-right {
-            opacity: 1;
-            transform: translateX(-120px); /* Выезжает справа */
-        }
-
-        /* Названия проектов */
-        .projects-section .project-card h3 a {
-            font-size: 1.2em;
-            font-family: 'Arial', sans-serif;
-            color: #6a55ff;
+        .vk-button, .doc-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #0e0e10; /* Чёрные кнопки */
+            color: #fff;
+            font-size: 1.1em;
+            border-radius: 6px;
             text-decoration: none;
+            transition: background-color 0.3s ease;
         }
-
-        .projects-section .project-card h3 a:hover {
-            text-decoration: underline;
+        .vk-button:hover, .doc-button:hover {
+            background-color: #222222;
+        }
+        .chip-block {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .chip-block img {
+            max-width: 1000px; /* увеличенный размер */
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+        }
+        .doc-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -85,9 +56,10 @@
     <header>
         <div class="container">
             <nav class="top-menu">
-                <h1>OutSpace</h1>
-                <ul>
-                </ul>
+                <h1>
+                    <img src="logo.png" alt="Логотип OutSpace" class="logo"> OutSpace
+                </h1>
+                <ul></ul>
             </nav>
         </div>
     </header>
@@ -95,18 +67,23 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h2>проект находится на стадии реализации</h2>
-                <img src="RENDER.png" alt="OutSpace плата" style="width: 100%; max-width: 8200px; height: auto; margin-top: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);">
+                <h2>проект находится на стадии тестирования</h2>
+
+                <!-- Фото SpaceChip MK.1 -->
+                <div class="chip-block">
+                    <img src="RENDER.png" alt="SpaceChip MK.1">
+                </div>
             </div>
         </section>
 
         <div class="container">
-            <nav class="top-menu">
-                <a href="https://borychka.ru/outspace/docum.docx" target="_blank">Документация для разработчика</a>
-            </nav>
+            <div class="doc-buttons">
+                <!-- Кнопка на VK -->
+                <a href="https://vk.com/outspacetech" class="vk-button" target="_blank">Перейти в VK</a>
+                <!-- Кнопка документации -->
+                <a href="https://borychka.ru/outspace/docum.docx" class="doc-button" target="_blank">Документация</a>
+            </div>
         </div>
-
-        
 
         <section id="contact" class="contact-section">
             <div class="container">
@@ -120,7 +97,6 @@
     <footer>
         <div class="container">
             <p>созданно при поддержке РЦПД ОГМА и КРЭТ БЭМЗ. 2025.</p>
-            <p>последние редактирование сайта произошло 26.09.2025.</p>
         </div>
     </footer>
 
@@ -133,19 +109,3 @@
     </script>
 </body>
 </html>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(101004444, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/101004444" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
